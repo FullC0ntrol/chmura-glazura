@@ -7,7 +7,7 @@ const tiles = [
 export default function Services(){
   return (
     <div className="container">
-      <h2 className="mb-4 text-left text-[clamp(22px,2.5vw,32px)]">Co robimy</h2>
+      <h2 className="mb-4 text-center text-[clamp(22px,2.5vw,32px)]">Co robimy</h2>
 
       {/* Tip: dopisz tu rozbudowę oferty – listy, ikony, małe zdjęcia realizacji itp. */}
 

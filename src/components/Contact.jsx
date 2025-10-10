@@ -21,7 +21,7 @@ export default function Contact() {
           <h2 className="m-0 mb-3 text-[clamp(26px,4vw,40px)] font-extrabold tracking-wide uppercase bg-gradient-to-r from-accent2 to-accent bg-clip-text text-accent">
             Skontaktuj się z nami
           </h2>
-          <div className="w-16 h-[3px] mx-auto mb-4 rounded bg-gradient-to-r from-accent to-accent2" />
+          <div className="w-160 h-[3px] mx-auto mb-4 rounded bg-gradient-to-t from-accent to-accent2" />
 
           <p className="opacity-95 text-[15px] sm:text-base leading-relaxed">
             Bezpłatna wycena i doradztwo materiałowe. Odpowiadamy szybko — zwykle tego samego dnia.
@@ -53,7 +53,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-[auto,1fr] md:grid-cols-[200px,1fr] items-center gap-x-4 gap-y-2 py-2">
               <dt className="text-muted font-semibold sm:text-center">Telefon:</dt>
               <dd>
-                <a className="text-accent2 hover:text-accent underline-offset-2 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent2 rounded" href="tel:+48735583713">
+                <a className="text-accent2 hover:text-accent underline-offset-2 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent2 rounded font-bold" href="tel:+48735583713">
                   +48 735 583 713
                 </a>
               </dd>
@@ -62,7 +62,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-[auto,1fr] md:grid-cols-[200px,1fr] items-center gap-x-4 gap-y-2 py-2">
               <dt className="text-muted font-semibold sm:text-center">E-mail:</dt>
               <dd>
-                <a className="text-accent2 hover:text-accent underline-offset-2 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent2 rounded" href="mailto:chmuraglazura@gmail.com">
+                <a className="text-accent2 hover:text-accent underline-offset-2 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent2 rounded font-bold" href="mailto:chmuraglazura@gmail.com">
                   chmuraglazura@gmail.com
                 </a>
               </dd>
@@ -70,7 +70,7 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 sm:grid-cols-[auto,1fr] md:grid-cols-[200px,1fr] items-center gap-x-4 gap-y-2 py-2">
               <dt className="text-muted font-semibold sm:text-center">Obsługiwany obszar:</dt>
-              <dd>Bielsko i okolice</dd>
+              <dd className="font-bold">Bielsko i okolice</dd>
             </div>
           </dl>
 

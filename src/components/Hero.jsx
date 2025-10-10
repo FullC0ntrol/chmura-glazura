@@ -17,7 +17,7 @@ export default function Hero(){
             <> <span className="text-accent bg-gradient-to-r from-accent to-accent2 bg-clip-text z-99">Perfekcyjna glazura</span> i łazienki, które zachwycają</>
           )}
         </h1>
-
+          <script defer async src='https://cdn.trustindex.io/loader.js?713490255f2a90543706a06d6b8'></script>
         <button
           onClick={()=>setAlt(v=>!v)}
           className="mb-4 inline-flex items-center px-4 py-2 rounded-full border border-accent2/50 text-white/90 hover:translate-y-[-3px] transition"
