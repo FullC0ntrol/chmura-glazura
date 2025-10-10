@@ -14,7 +14,6 @@
   /* (opcjonalnie) cienie */
   --shadow-card: 0 10px 25px rgba(0,0,0,.35);
 }
-
 /* Globalki – możesz je zostawić jako zwykły CSS */
 html, body { height: 100%; width: 100%; }
 body { background: var(--color-bg); color: var(--color-text); font-family: ui-sans-serif, system-ui, sans-serif; }

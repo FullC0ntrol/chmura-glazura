@@ -86,7 +86,11 @@ export default function Nav() {
               <a
                 key={href}
                 href={href}
-                className="px-3 py-2 rounded hover:bg-white/5"
+                className={`px-3 py-2 rounded transition ${
+                  label === "Kontakt"
+                    ? "bg-accent text-white font-semibold shadow-md hover:bg-accent/80"
+                    : "hover:bg-white/5"
+                }`}
                 onClick={() => setOpen(false)}
               >
                 {label}
