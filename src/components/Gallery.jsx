@@ -9,7 +9,7 @@ const images = [
   "/images/lazienka5.jpg",
   "/images/lazienka6.jpg",
   "/images/lazienka7.jpg",
-  "/images/lazienka8.JPG",
+  "/images/lazienka8.jpg",
 ];
 
 export default function Gallery(){
