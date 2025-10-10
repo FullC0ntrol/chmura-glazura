@@ -1,0 +1,20 @@
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chmura Glazura — logo">
+  <defs>
+    <linearGradient id="lgTile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff7a18"/>
+      <stop offset="100%" stop-color="#ffd166"/>
+    </linearGradient>
+    <linearGradient id="lgCloud" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00c2ff"/>
+      <stop offset="100%" stop-color="#9be7ff"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(20,28)">
+    <rect x="0" y="0" width="80" height="80" transform="rotate(45 40 40)" fill="url(#lgTile)" rx="8"/>
+    <path d="M130 120c-28 0-50-18-50-44s22-44 50-44c4-26 30-44 60-44 28 0 50 14 57 36 30 0 52 23 52 54s-22 54-52 54z" fill="url(#lgCloud)"/>
+  </g>
+  <g transform="translate(340,110)" font-family="system-ui, Segoe UI, Roboto" font-weight="900" letter-spacing="1.5">
+    <text x="0" y="0" font-size="60" fill="#ffffff">CHMURA</text>
+    <text x="0" y="56" font-size="60" fill="#ffd166">GLAZURA</text>
+  </g>
+</svg>
