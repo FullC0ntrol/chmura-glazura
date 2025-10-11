@@ -105,14 +105,14 @@ export default function LoadingPage({ visible = true, onFinish, minTimeMs = 600 
         }
 
         /* Pomarańczowy kafelek (interaktywny, obrót wg --spin) */
-        .tile {
+        .loader-tile {
           position: absolute; inset: 0;
           display: grid; place-items: center;
           transform-style: preserve-3d;
           animation: spin var(--spin, 6s) linear infinite;
           will-change: transform;
         }
-        .tile::before {
+        .loader-tile::before {
           content: "";
           width: 54%;
           aspect-ratio: 1/1;
@@ -141,7 +141,7 @@ export default function LoadingPage({ visible = true, onFinish, minTimeMs = 600 
 
         /* dostępność: tryb ograniczonego ruchu */
         @media (prefers-reduced-motion: reduce) {
-          .tile { animation: none; }
+          .loader-tile { animation: none; }
         }
         @keyframes spin {
           from { transform: rotate(0deg); }
@@ -151,7 +151,7 @@ export default function LoadingPage({ visible = true, onFinish, minTimeMs = 600 
 
       <div className="logo-wrap" aria-label="Ładowanie…">
         <div className="glow" />
-        <div className="tile" />
+        <div className="loader-tile" />
         {/* Użyj swojego pliku logo — wcześniej miałeś /logo-lockup.svg.
             Jeśli chcesz użyć samego znaku: wrzuć go do /public/logo-mark.svg */}
         <img className="logo" src="/logo-lockup.svg" alt="Chmura Glazura — logo" />

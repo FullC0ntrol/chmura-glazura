@@ -29,3 +29,22 @@ body { background: var(--color-bg); color: var(--color-text); font-family: ui-sa
 html {
   scroll-behavior: smooth;
 }
+/* miękkie światła za mozaiką (jeśli nie masz tej klasy) */
+.ring-lights::before,
+.ring-lights::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background:
+    radial-gradient(380px 220px at 20% 20%, rgba(0,194,255,0.18), transparent 60%),
+    radial-gradient(360px 220px at 80% 70%, rgba(255,122,24,0.18), transparent 60%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+/* połysk na hoverze kafelków */
+.shine {
+  background: radial-gradient(600px 200px at 20% -20%, rgba(255,255,255,0.25), transparent 60%),
+              radial-gradient(500px 220px at 120% 120%, rgba(255,122,24,0.18), transparent 60%);
+  mix-blend-mode: screen;
+}
