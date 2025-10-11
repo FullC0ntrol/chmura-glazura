@@ -35,7 +35,7 @@ export default function Contact() {
           >
             <a
               className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full font-bold text-[#111] bg-gradient-to-r from-accent to-[#ffb703] shadow-[0_6px_18px_rgba(255,122,24,.25)] transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              href="tel:+48735583713"
+              href="tel:+48667111361"
               aria-label="Zadzwoń do nas"
             >
               <svg
@@ -92,10 +92,10 @@ export default function Contact() {
     </dt>
     <dd>
       <a
-        href="tel:+48735583713"
+        href="tel:+48667111361"
         className="text-accent2 hover:text-accent font-semibold tracking-wide transition-colors duration-200 underline-offset-2 hover:underline focus-visible:ring-2 focus-visible:ring-accent2 rounded"
       >
-        +48 735 583 713
+        667 111 361
       </a>
     </dd>
   </div>

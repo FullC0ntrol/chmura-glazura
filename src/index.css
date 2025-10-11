@@ -26,3 +26,6 @@ body { background: var(--color-bg); color: var(--color-text); font-family: ui-sa
     radial-gradient(circle at 80% 70%, rgba(255,122,24,0.25), transparent 60%),
     linear-gradient(180deg, rgba(15,17,21,1) 0%, rgba(12,14,18,1) 100%);
 }
+html {
+  scroll-behavior: smooth;
+}
