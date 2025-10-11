@@ -65,13 +65,40 @@ export default function Hero() {
               <br />
               <span className="text-white">Łukasz Chmura</span>
             </h1>
+<p
+  className="relative max-w-[700px] mx-auto md:mx-0 mb-8 text-[18px] sm:text-[19px] leading-8 text-white/90 italic"
+>
+  {/* gradientowa poświata za tekstem */}
+  <span
+    className="absolute inset-0 -z-10 blur-2xl opacity-25 bg-gradient-to-r from-accent to-accent2"
+    aria-hidden="true"
+  ></span>
 
-            <p className="max-w-[680px] mx-auto md:mx-0 mb-8 text-[18px] sm:text-[19px] leading-8 opacity-95">
-              Do każdego zlecenia podchodzę z pełnym zaangażowaniem i dbałością o szczegóły — 
-              dokładność i estetyka wykonania to dla mnie priorytet. 
-              Zawsze dotrzymuję ustalonych terminów, a moim celem jest zadowolenie klienta oraz 
-              solidny efekt, który posłuży na lata.
-            </p>
+  {/* duże dekoracyjne cudzysłowy */}
+  <span className="absolute -left-4 -top-2 text-[60px] text-accent/30 font-serif select-none">
+    “
+  </span>
+
+  Do każdego zlecenia podchodzę z pełnym zaangażowaniem i{" "}
+  <span className="text-accent font-semibold not-italic">
+    dbałością o szczegóły
+  </span>{" "}
+  — <span className="text-accent2 font-semibold not-italic">dokładność</span> i{" "}
+  <span className="text-accent font-semibold not-italic">estetyka wykonania</span>{" "}
+  to dla mnie priorytet.  
+  Zawsze dotrzymuję terminów, a moim celem jest{" "}
+  <span className="text-accent2 font-semibold not-italic">
+    zadowolenie klienta
+  </span>{" "}
+  oraz solidny efekt, który posłuży na lata.
+
+  <span className="absolute right-0 -bottom-10 text-[60px] text-accent2/30 font-serif select-none">
+    ”
+  </span>
+</p>
+
+
+
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
               <a

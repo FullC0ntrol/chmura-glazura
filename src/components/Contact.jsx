@@ -19,12 +19,12 @@ export default function Contact() {
 
         <div className="relative">
           <h2 className="m-0 mb-3 text-[clamp(26px,4vw,40px)] font-extrabold tracking-wide uppercase bg-gradient-to-r from-accent2 to-accent bg-clip-text text-accent">
-            Skontaktuj się z nami
+            Skontaktuj się ze mną
           </h2>
           <div className="w-160 h-[3px] mx-auto mb-4 rounded bg-gradient-to-t from-accent to-accent2" />
 
           <p className="opacity-95 text-[15px] sm:text-base leading-relaxed">
-            Bezpłatna wycena i doradztwo materiałowe. Odpowiadamy szybko —
+            Bezpłatna wycena i doradztwo materiałowe. Odpowiadam szybko —
             zwykle tego samego dnia.
           </p>
 
@@ -67,7 +67,7 @@ export default function Contact() {
 
             <a
               className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full font-bold text-accent2 bg-[rgba(0,194,255,.16)] border border-[rgba(0,194,255,.25)] transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent2"
-              href="tel:+48735583713"
+              href="https://wa.me/48667111361"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Napisz na WhatsApp"
@@ -95,7 +95,7 @@ export default function Contact() {
         href="tel:+48667111361"
         className="text-accent2 hover:text-accent font-semibold tracking-wide transition-colors duration-200 underline-offset-2 hover:underline focus-visible:ring-2 focus-visible:ring-accent2 rounded"
       >
-        667 111 361
+        +48 667 111 361
       </a>
     </dd>
   </div>

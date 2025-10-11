@@ -36,7 +36,7 @@ export default function Reviews() {
       <h2 className="mb-4 text-center text-[clamp(22px,2.5vw,32px)] font-bold">
         Opinie klientów
       </h2>
-
+      <h3 className="text-center">(Tymczasowe)</h3>
       {/* TYLKO kontener na widget */}
       <div ref={containerRef} />
     </section>
