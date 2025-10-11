@@ -69,27 +69,25 @@ export default function Hero() {
               "
               loading="eager"
             />
-<h1 className="m-0 mb-4 text-[clamp(32px,5.6vw,58px)] font-extrabold leading-tight relative">
-  <span
-    className="
+            <h1 className="m-0 mb-4 text-[clamp(32px,5.6vw,58px)] font-extrabold leading-tight relative">
+              <span
+                className="
       inline-block text-transparent bg-clip-text
       bg-gradient-to-r from-[#ff7a18] via-[#ff8c1a] to-[#ffae42]
       drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)]
     "
-    style={{
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      textShadow:
-        "1px 1px 0 #fff2, -1px -1px 0 #0003, 0 0 15px rgba(255,122,24,0.25)",
-    }}
-  >
-    Profesjonalne układanie płytek
-  </span>
-  <br />
-  <span className="text-white">Łukasz Chmura</span>
-</h1>
-
-
+                style={{
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  textShadow:
+                    "1px 1px 0 #fff2, -1px -1px 0 #0003, 0 0 15px rgba(255,122,24,0.25)",
+                }}
+              >
+                Profesjonalne układanie płytek
+              </span>
+              <br />
+              <span className="text-white">Łukasz Chmura</span>
+            </h1>
 
             {/* AKAPIT z delikatnym podświetleniem + akcenty w kolorze */}
             <p className="max-w-[700px] mx-auto md:mx-0 mb-8 text-[18px] sm:text-[19px] leading-8 text-white/90 relative anim-rise [animation:riseIn_.75s_.08s_ease-out_forwards] opacity-0">
@@ -98,12 +96,19 @@ export default function Hero() {
                 aria-hidden="true"
               />
               Do każdego zlecenia podchodzę z pełnym zaangażowaniem i{" "}
-              <span className="text-accent font-semibold">dbałością o szczegóły</span> —{" "}
-              <span className="text-accent2 font-semibold">dokładność</span> i{" "}
-              <span className="text-accent font-semibold">estetyka wykonania</span> to dla mnie
-              priorytet. Zawsze dotrzymuję terminów, a moim celem jest{" "}
-              <span className="text-accent2 font-semibold">zadowolenie klienta</span> oraz solidny
-              efekt, który posłuży na lata.
+              <span className="text-accent font-semibold">
+                dbałością o szczegóły
+              </span>{" "}
+              — <span className="text-accent2 font-semibold">dokładność</span> i{" "}
+              <span className="text-accent font-semibold">
+                estetyka wykonania
+              </span>{" "}
+              to dla mnie priorytet. Zawsze dotrzymuję terminów, a moim celem
+              jest{" "}
+              <span className="text-accent2 font-semibold">
+                zadowolenie klienta
+              </span>{" "}
+              oraz solidny efekt, który posłuży na lata.
             </p>
 
             {/* CTA */}
@@ -119,10 +124,11 @@ export default function Hero() {
               </a>
               <a
                 href="#galeria"
-                className="inline-block px-8 py-3 font-semibold tracking-wide rounded-full
-                           bg-transparent text-[var(--color-text)]
-                           border border-white/15 hover:border-white/30
-                           transition will-change-transform hover:-translate-y-[3px] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent2/60"
+                className="hidden sm:inline-block px-8 py-3 font-semibold tracking-wide rounded-full
+             bg-transparent text-[var(--color-text)]
+             border border-white/15 hover:border-white/30
+             transition will-change-transform hover:-translate-y-[3px]
+             focus:outline-none focus-visible:ring-2 focus-visible:ring-accent2/60"
               >
                 Zobacz realizacje
               </a>
@@ -176,8 +182,21 @@ export default function Hero() {
           aria-label="Przejdź do sekcji Usługi"
         >
           <span className="inline-block text-sm tracking-wide">Przewiń</span>
-          <svg className="mx-auto mt-1 animate-[nudge_1.6s_ease-in-out_infinite]" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg
+            className="mx-auto mt-1 animate-[nudge_1.6s_ease-in-out_infinite]"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden
+          >
+            <path
+              d="M6 9l6 6 6-6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </a>
       </section>
