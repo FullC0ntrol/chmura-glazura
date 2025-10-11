@@ -40,7 +40,7 @@ export default function Gallery(){
 
   return (
     <div className="container">
-      <h2 className="mb-4 text-center text-[clamp(22px,2.5vw,32px)]">Realizacje</h2>
+      <h2 className="mb-4 text-center text-[clamp(22px,2.5vw,32px)] font-bold">Realizacje</h2>
 
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         {images.map((s,i)=>(

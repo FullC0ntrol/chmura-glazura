@@ -20,7 +20,7 @@ export default function Reviews() {
 
     // 4) WSTRZYKUJEMY SKRYPT DO KONTENERA (kluczowa zmiana!)
     const script = document.createElement("script");
-    script.src = "https://cdn.trustindex.io/loader.js?713490255f2a90543706a06d6b8"; // <— Twój kod
+    script.src = "https://cdn.trustindex.io/loader.js?9e7d810558a693930a36c71ff82"; // <— Twój kod
     script.async = true;
     script.defer = true;
     container.appendChild(script);
@@ -33,7 +33,7 @@ export default function Reviews() {
 
   return (
     <section className="container">
-      <h2 className="mb-4 text-center text-[clamp(22px,2.5vw,32px)]">
+      <h2 className="mb-4 text-center text-[clamp(22px,2.5vw,32px)] font-bold">
         Opinie klientów
       </h2>
 

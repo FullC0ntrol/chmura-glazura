@@ -140,7 +140,7 @@ export default function Contact() {
           {/* Social media */}
           <div className="mt-6 flex justify-center gap-4">
             <a
-              href="https://www.facebook.com/profile.php?id=61582097034611"
+              href="https://www.facebook.com/profile.php?id=61582352062633"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"

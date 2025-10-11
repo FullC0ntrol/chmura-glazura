@@ -1,22 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Hero() {
-  const [alt, setAlt] = useState(false);
-
-  // Ustawiamy realną wysokość view-portu w --app-vh
+  // Ustawienie realnego viewportu (stabilne 100vh na mobile)
   useEffect(() => {
     const setVH = () => {
-      const vh = window.innerHeight; // realny pikselowy viewport
+      const vh = window.innerHeight;
       document.documentElement.style.setProperty("--app-vh", `${vh}px`);
     };
     setVH();
-    // iOS/Android potrafią zmieniać wysokość przy scrollu/orientacji
+    const t = setTimeout(setVH, 300);
     window.addEventListener("resize", setVH);
     window.addEventListener("orientationchange", setVH);
     document.addEventListener("visibilitychange", setVH);
-    // krótki timeout, gdy pasek adresu „doskakuje” po załadowaniu
-    const t = setTimeout(setVH, 300);
-
     return () => {
       clearTimeout(t);
       window.removeEventListener("resize", setVH);
@@ -28,81 +23,111 @@ export default function Hero() {
   return (
     <>
       <style>{`
-        :root { --nav-h: 68px; } /* dostosuj do realnej wysokości headera na mobile */
-        @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-30px) } }
-        @keyframes floatSm { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-14px) } }
+        :root { --nav-h: 68px; }
+        @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-24px) } }
+        @keyframes floatSm { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-12px) } }
       `}</style>
 
       <section
         id="start"
-        // Klucz: wysokość = realny viewport (JS), a na desktopie zwykłe 100dvh
-        // Odejmujemy header w wysokości sekcji, a padding-top "odsuwa" treść.
         className="
-          relative
-          h-[calc(var(--app-vh,100dvh))]
-          md:h-[100dvh]
-          flex items-center justify-center text-center overflow-hidden hero-gradient
+          relative isolate overflow-hidden hero-gradient
+          h-[calc(var(--app-vh,100dvh))] md:h-[100dvh]
           pt-[calc(var(--nav-h,68px)+env(safe-area-inset-top))]
           md:pt-0
-          isolate
+          flex items-center
         "
+        aria-label="Chmura Glazura — profesjonalne układanie płytek"
       >
-        {/* Overlay z gradientem rozciągnięty NA PEWNO na cały box + 1px margines (znika szpara na iOS) */}
-        <div className="pointer-events-none absolute -inset-px bg-gradient-to-br from-[rgba(255,122,24,0.08)] to-[rgba(0,194,255,0.08)]" />
+        <div className="pointer-events-none absolute -inset-px bg-gradient-to-br from-[rgba(255,122,24,0.06)] to-[rgba(0,194,255,0.08)]" />
 
-        <div className="container relative z-10 flex flex-col items-center gap-0 px-5">
-          <img
-            src="/logo-lockup.svg"
-            alt="Chmura Glazura — logo"
-            className="
-              w-[min(68%,280px)]
-              sm:w-[min(70%,360px)]
-              md:w-[min(70%,380px)]
-              mb-6 drop-shadow-xl
-              animate-[floatSm_6s_ease-in-out_infinite]
-              sm:animate-[float_6s_ease-in-out_infinite]
-            "
-          />
+        <div className="container relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center px-5">
 
-          <h1 className="m-0 mb-5 text-[clamp(30px,5.5vw,56px)] font-extrabold leading-tight bg-gradient-to-r from-accent to-accent2 bg-clip-text text-accent">
-            {alt ? (
-              <>
-                <span className="text-accent bg-gradient-to-r from-accent to-accent2 bg-clip-text">
-                  Tak piękna łazienka, że opada szczęka?
-                </span>
-                <br />
-                To dobra glazura – Łukasz Chmura
-              </>
-            ) : (
-              <>
-                <span className="text-accent bg-gradient-to-r from-accent to-accent2 bg-clip-text">
-                  Perfekcyjna glazura
-                </span>{" "}
-                i łazienki, które zachwycają
-              </>
-            )}
-          </h1>
+          {/* LEWA KOLUMNA — tekst + CTA */}
+          <div className="text-center md:text-left">
+            <img
+              src="/logo-lockup.svg"
+              alt="Chmura Glazura — logo"
+              className="
+                w-[min(68%,280px)] sm:w-[min(70%,360px)] md:w-[min(70%,360px)]
+                mx-auto md:mx-0
+                mb-6 drop-shadow-xl
+                animate-[floatSm_6s_ease-in-out_infinite]
+                sm:animate-[float_6s_ease-in-out_infinite]
+              "
+              loading="eager"
+            />
 
-          <script defer async src="https://cdn.trustindex.io/loader.js?713490255f2a90543706a06d6b8"></script>
+            <h1 className="m-0 mb-4 text-[clamp(32px,5.6vw,58px)] font-extrabold leading-tight">
+              <span className="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-2)] bg-clip-text text-transparent">
+                Profesjonalne układanie płytek
+              </span>
+              <br />
+              <span className="text-white">Łukasz Chmura</span>
+            </h1>
 
-          <button
-            onClick={() => setAlt(v => !v)}
-            className="mb-4 inline-flex items-center px-4 py-2 rounded-full border border-accent2/50 text-white/90 hover:translate-y-[-3px] transition"
-          >
-            Opcja numer 2 :D
-          </button>
+            <p className="max-w-[680px] mx-auto md:mx-0 mb-8 text-[18px] sm:text-[19px] leading-8 opacity-95">
+              Do każdego zlecenia podchodzę z pełnym zaangażowaniem i dbałością o szczegóły — 
+              dokładność i estetyka wykonania to dla mnie priorytet. 
+              Zawsze dotrzymuję ustalonych terminów, a moim celem jest zadowolenie klienta oraz 
+              solidny efekt, który posłuży na lata.
+            </p>
 
-          <p className="max-w-[700px] mx-auto mb-9 text-[18px] sm:text-[19px] leading-8 opacity-95">
-            Tworzymy łazienki od stanu surowego po ostatnią fugę — z precyzją, estetyką i pasją do detali.
-            Zaufaj specjalistom, którzy potrafią połączyć funkcjonalność z designem.
-          </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
+              <a
+                href="#kontakt"
+                className="inline-block px-8 py-3 font-semibold tracking-wide text-white rounded-full
+                           bg-[var(--color-accent)]
+                           border border-white/10 shadow-[0_6px_28px_rgba(255,122,24,0.5)]
+                           transition will-change-transform hover:-translate-y-[3px]"
+              >
+                Skontaktuj się
+              </a>
+              <a
+                href="#galeria"
+                className="inline-block px-8 py-3 font-semibold tracking-wide rounded-full
+                           bg-transparent text-[var(--color-text)]
+                           border border-white/15 hover:border-white/30
+                           transition will-change-transform hover:-translate-y-[3px]"
+              >
+                Zobacz realizacje
+              </a>
+            </div>
+          </div>
 
-          <a
-            href="#kontakt"
-            className="inline-block px-9 py-3 font-semibold tracking-wide text-white rounded-full bg-accent border border-accent2/40 shadow-[0_4px_18px_rgba(255,122,24,0.4)] transition hover:-translate-y-[3px] hover:shadow-[0_6px_25px_rgba(255,122,24,0.6)]"
-          >
-            Skontaktuj się z nami
-          </a>
+          {/* PRAWA KOLUMNA — mozaika zdjęć */}
+          <div className="relative md:justify-self-end w-full max-w-[560px] hidden mx-auto md:mx-0 md:block">
+            <div className="ring-lights pointer-events-none" aria-hidden />
+
+            <div className="grid grid-cols-3 gap-3 perspective-900">
+              {[
+                "/images/lazienka1.jpg",
+                "/images/lazienka2.jpg",
+                "/images/lazienka3.jpg",
+                "/images/lazienka4.jpg",
+                "/images/lazienka5.jpg",
+                "/images/lazienka6.jpg"
+              ].map((src, i) => (
+                <div
+                  key={src}
+                  className={`
+                    tile group relative overflow-hidden rounded-xl2 shadow-[var(--shadow-card)]
+                    ${i % 3 === 0 ? "row-span-2" : ""}
+                  `}
+                  style={{ aspectRatio: i % 3 === 0 ? "2/3" : "1/1" }}
+                >
+                  <img
+                    src={src}
+                    alt="Realizacja — glazura/łazienka"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    loading={i < 2 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 shine opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </>
