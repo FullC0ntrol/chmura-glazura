@@ -58,11 +58,6 @@ export default function Services(){
           ))}
         </ul>
       </div>
-
-      {/* Dodatkowa oferta w kafelkach (Twoje wcześniejsze tiles) */}
-      <h3 className="mb-4 text-center text-[clamp(22px,2.5vw,32px)] text-white/90 font-bold">
-        Specjalizuje się w 
-      </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {tiles.map((t)=>(
           <article

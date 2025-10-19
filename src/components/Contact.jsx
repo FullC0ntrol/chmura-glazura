@@ -127,16 +127,7 @@ export default function Contact() {
 </dl>
 
 
-          <ul className="flex flex-wrap justify-center gap-2">
-            {["Wycena gratis", "Gwarancja", "Faktura VAT"].map((item) => (
-              <li
-                key={item}
-                className="px-2.5 py-1 rounded bg-white/10 border border-white/15 text-sm sm:text-[15px]"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+        
           {/* Social media */}
           <div className="mt-6 flex justify-center gap-4">
             <a

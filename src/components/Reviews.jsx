@@ -17,10 +17,9 @@ export default function Reviews() {
     // 3) Dodajemy wewnątrz kontenera wymagany znacznik .ti-widget
     const widgetDiv = document.createElement("div");
 
-
     // 4) WSTRZYKUJEMY SKRYPT DO KONTENERA (kluczowa zmiana!)
     const script = document.createElement("script");
-    script.src = "https://cdn.trustindex.io/loader.js?9e7d810558a693930a36c71ff82"; // <— Twój kod
+    script.src = "https://cdn.shapo.io/js/embed.js"; // <— Twój kod
     script.async = true;
     script.defer = true;
     container.appendChild(script);
@@ -34,10 +33,16 @@ export default function Reviews() {
   return (
     <section className="container">
       <h2 className="mb-4 text-center text-[clamp(22px,2.5vw,32px)] font-bold">
-        Opinie klientów
+        Opinie
       </h2>
-      <h3 className="text-center">(Tymczasowe)</h3>
       {/* TYLKO kontener na widget */}
+      <div id="shapo-widget-26c17ff89dfbbfc83455"></div>
+      <script
+        id="shapo-embed-js"
+        type="text/javascript"
+        src="https://cdn.shapo.io/js/embed.js"
+        defer
+      ></script>
       <div ref={containerRef} />
     </section>
   );
