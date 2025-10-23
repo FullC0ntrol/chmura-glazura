@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://admin.chmura-glazura.pl";
 
 // =============================================
 // Lekki Lightbox
@@ -66,8 +66,7 @@ export default function Gallery({ title = "Realizacje" }) {
       })
       .then((data) => {
         // poprawiamy linki
-        const mapUrl = (u) =>
-          u?.startsWith("http") ? u : `${API_BASE}${u}`;
+        const mapUrl = (u) => (u?.startsWith("http") ? u : `${API_BASE}${u}`);
         const mapped = data.map((a) => ({
           ...a,
           images: (a.images || []).map((img) => ({
@@ -110,7 +109,7 @@ export default function Gallery({ title = "Realizacje" }) {
     <section id="realizacje" className="text-white">
       <div className="container mx-auto max-w-6xl px-4">
         <h2 className="mb-10 text-center text-[clamp(22px,2.5vw,32px)] font-bold tracking-wide">
-          {title}
+          Ostatnie Realizacje
         </h2>
 
         {/* STANY */}
