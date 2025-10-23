@@ -109,7 +109,7 @@ export default function Gallery({ title = "Realizacje" }) {
     <section id="realizacje" className="text-white">
       <div className="container mx-auto max-w-6xl px-4">
         <h2 className="mb-10 text-center text-[clamp(22px,2.5vw,32px)] font-bold tracking-wide">
-          {title}
+          Ostatnie Realizacje
         </h2>
 
         {/* STANY */}
