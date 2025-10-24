@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import ElfsightReviews from "./ElfsightReviews";
+
 
 export default function Reviews() {
   useEffect(() => {
@@ -12,14 +14,7 @@ export default function Reviews() {
       document.body.appendChild(script);
     }
 
-    // --- 2️⃣ Wczytaj skrypt Elfsight (jeśli nie istnieje) ---
-    if (!document.getElementById("elfsight-platform-js")) {
-      const script = document.createElement("script");
-      script.id = "elfsight-platform-js";
-      script.src = "https://elfsightcdn.com/platform.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
+  
   }, []);
 
   return (
@@ -35,10 +30,7 @@ export default function Reviews() {
         Opinie Facebook
       </h2>
       {/* --- 🔷 Widget Elfsight --- */}
-      <div
-        className="elfsight-app-00df572b-96d6-4ba0-b952-63c6ae45b188"
-        data-elfsight-app-lazy
-      ></div>
+      <ElfsightReviews />
     </section>
   );
 }

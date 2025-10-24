@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { ReactComponent as Logo } from "../../public/logo-lockup.svg"; // <-- względna ścieżka (SVGR)
 
 export default function Hero() {
   // Stabilne 100vh na mobile
@@ -25,14 +26,9 @@ export default function Hero() {
       <style>{`
         :root { --nav-h: 68px; }
 
-        /* delikatne unoszenie logo (wyłączone przy reduced-motion) */
         @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-20px) } }
         @keyframes floatSm { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
-
-        /* wejście treści */
         @keyframes riseIn { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: translateY(0) } }
-
-        /* pulsująca strzałka na dół */
         @keyframes nudge { 0%,100% { transform: translateY(0) } 50% { transform: translateY(6px) } }
 
         @media (prefers-reduced-motion: reduce) {
@@ -51,31 +47,55 @@ export default function Hero() {
         "
         aria-label="Chmura Glazura — profesjonalne układanie płytek"
       >
+        {/* HERO jako element w DOM – będzie LCP */}
+        <picture>
+          <source
+            srcSet="/hero-1600.avif 1600w, /hero-1200.avif 1200w, /hero-800.avif 800w"
+            type="image/avif"
+          />
+          <source
+            srcSet="/hero-1600.webp 1600w, /hero-1200.webp 1200w, /hero-800.webp 800w"
+            type="image/webp"
+          />
+          <img
+            src="/hero-1200.avif"
+            srcSet="/hero-800.avif 800w, /hero-1200.avif 1200w, /hero-1600.avif 1600w"
+            sizes="(max-width: 768px) 100vw, 1200px"
+            width="1200"
+            height="700"
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 -z-10 w-full h-full object-cover scale-[1.01]"
+          />
+        </picture>
+
         {/* overlay koloru */}
         <div className="pointer-events-none absolute -inset-px bg-gradient-to-br from-[rgba(255,122,24,0.06)] to-[rgba(0,194,255,0.08)]" />
 
         <div className="container relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center px-5">
           {/* LEWA KOLUMNA — copy + CTA */}
           <div className="text-center md:text-left">
-            <img
-              src="/logo-lockup.svg"
-              alt="Chmura Glazura — logo"
+            {/* LOGO jako komponent React (SVGR) */}
+            <Logo
+              width={360}
+              height={120}
+              role="img"
+              aria-label="Chmura Glazura — logo"
               className="
                 w-[min(68%,280px)] sm:w-[min(70%,360px)] md:w-[min(70%,360px)]
-                mx-auto md:mx-0
-                mb-6 drop-shadow-xl
-                anim-floatSm sm:anim-float
+                mx-auto md:mx-0 mb-6 drop-shadow-xl
                 [animation:floatSm_6s_ease-in-out_infinite] sm:[animation:float_6s_ease-in-out_infinite]
               "
-              loading="eager"
             />
+
             <h1 className="m-0 mb-4 text-[clamp(32px,5.6vw,58px)] font-extrabold leading-tight relative">
               <span
                 className="
-      inline-block text-transparent bg-clip-text
-      bg-gradient-to-r from-[#ff7a18] via-[#ff8c1a] to-[#ffae42]
-      drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)]
-    "
+                  inline-block text-transparent bg-clip-text
+                  bg-gradient-to-r from-[#ff7a18] via-[#ff8c1a] to-[#ffae42]
+                  drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)]
+                "
                 style={{
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
@@ -89,25 +109,18 @@ export default function Hero() {
               <span className="text-white">Łukasz Chmura</span>
             </h1>
 
-            {/* AKAPIT z delikatnym podświetleniem + akcenty w kolorze */}
+            {/* AKAPIT */}
             <p className="max-w-[700px] mx-auto md:mx-0 mb-8 text-[18px] sm:text-[19px] leading-8 text-white/90 relative anim-rise [animation:riseIn_.75s_.08s_ease-out_forwards] opacity-0">
               <span
                 className="absolute inset-0 -z-10 blur-2xl opacity-20 bg-gradient-to-r from-accent to-accent2"
                 aria-hidden="true"
               />
               Do każdego zlecenia podchodzę z pełnym zaangażowaniem i{" "}
-              <span className="text-accent font-semibold">
-                dbałością o szczegóły
-              </span>{" "}
+              <span className="text-accent font-semibold">dbałością o szczegóły</span>{" "}
               — <span className="text-accent2 font-semibold">dokładność</span> i{" "}
-              <span className="text-accent font-semibold">
-                estetyka wykonania
-              </span>{" "}
-              to dla mnie priorytet. Zawsze dotrzymuję terminów, a moim celem
-              jest{" "}
-              <span className="text-accent2 font-semibold">
-                zadowolenie klienta
-              </span>{" "}
+              <span className="text-accent font-semibold">estetyka wykonania</span>{" "}
+              to dla mnie priorytet. Zawsze dotrzymuję terminów, a moim celem jest{" "}
+              <span className="text-accent2 font-semibold">zadowolenie klienta</span>{" "}
               oraz solidny efekt, który posłuży na lata.
             </p>
 
@@ -125,17 +138,17 @@ export default function Hero() {
               <a
                 href="#galeria"
                 className="hidden sm:inline-block px-8 py-3 font-semibold tracking-wide rounded-full
-             bg-transparent text-[var(--color-text)]
-             border border-white/15 hover:border-white/30
-             transition will-change-transform hover:-translate-y-[3px]
-             focus:outline-none focus-visible:ring-2 focus-visible:ring-accent2/60"
+                           bg-transparent text-[var(--color-text)]
+                           border border-white/15 hover:border-white/30
+                           transition will-change-transform hover:-translate-y-[3px]
+                           focus:outline-none focus-visible:ring-2 focus-visible:ring-accent2/60"
               >
                 Zobacz realizacje
               </a>
             </div>
           </div>
 
-          {/* PRAWA KOLUMNA — mozaika zdjęć z miękką maską na krawędziach */}
+          {/* PRAWA KOLUMNA — mozaika zdjęć */}
           <div className="relative md:justify-self-end w-full max-w-[560px] hidden mx-auto md:mx-0 md:block">
             <div className="ring-lights pointer-events-none" aria-hidden />
             <div
@@ -151,26 +164,33 @@ export default function Hero() {
                 "/images/lazienka4.jpg",
                 "/images/lazienka5.jpg",
                 "/images/lazienka6.jpg",
-              ].map((src, i) => (
-                <div
-                  key={src}
-                  className={`
-                    group relative overflow-hidden rounded-xl2 shadow-[var(--shadow-card)]
-                    ${i % 3 === 0 ? "row-span-2" : ""}
-                    will-change-transform
-                  `}
-                  style={{ aspectRatio: i % 3 === 0 ? "2/3" : "1/1" }}
-                >
-                  <img
-                    src={src}
-                    alt="Realizacja — glazura/łazienka"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    loading={i < 2 ? "eager" : "lazy"}
-                    decoding="async"
-                  />
-                  <div className="absolute inset-0 shine opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              ))}
+              ].map((src, i) => {
+                const tall = i % 3 === 0;
+                const w = tall ? 360 : 320;
+                const h = tall ? 540 : 320;
+                return (
+                  <div
+                    key={src}
+                    className={`
+                      group relative overflow-hidden rounded-xl2 shadow-[var(--shadow-card)]
+                      ${tall ? "row-span-2" : ""}
+                      will-change-transform
+                    `}
+                    style={{ aspectRatio: tall ? "2/3" : "1/1" }}
+                  >
+                    <img
+                      src={src}
+                      alt="Realizacja — glazura/łazienka"
+                      width={w}
+                      height={h}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      loading="lazy"       // nie konkurują z LCP
+                      decoding="async"
+                    />
+                    <div className="absolute inset-0 shine opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
